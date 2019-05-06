@@ -1,0 +1,130 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Sheet | Facial Attendee</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/png" href="{% static 'Logo.png' %}" />
+    <link
+      href="{% static 'addsheet.css' %}"
+      type="text/css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="navbar sticky-top navbar-light bg-light mynav">
+      <img class="att" src="{% static 'Capture.PNG' %}" alt="Smiley face" />
+      <button type="submit" class="mybutton ">
+        <strong>{{tname}}</strong>
+      </button>
+    </nav>
+
+    <div class="container">
+      <div class="row myrow">
+        <div class="col- mymenu">
+          <p
+            class="myfontx"
+            style="font-size:5vh;color:#fFFFFf;text-align: left"
+          >
+            <strong>
+              MAIN
+            </strong>
+          </p>
+          <button class="mybutton2" onclick="location.href='{{dashboard}}'" type="button"><strong> Dashboard </strong></button>
+
+          <p
+          class="myfontx"
+          style="font-size:3vh;color:#fFFFFf;text-align:left"
+        >
+          <strong>
+           ATTENDANCE
+          </strong>
+        </p>
+  
+          <button type="submit" class="mybutton1 ">
+            <strong> Add Sheet </strong>
+          </button>
+          <button class="mybutton2" onclick="location.href='{{viewsheet}}'" type="button"><strong> View Sheet </strong></button>
+  
+              <button type="submit" class="mybutton2 ">
+                    <strong> Pending </strong>
+                  </button>
+
+          
+        </div>
+
+        <div class="col-md">
+                <p class="myfont1" style="font-size:5vh;color:#145082;">
+                        <strong>Add Attendance Sheet</strong>
+                      </p>
+                <div class="container my-5">
+                        <div class="row">
+                          <div class="col-md-6 mx-auto">
+                            <form action="/apis/attendancesheet/" method="POST">
+                                <div class="form-group">
+                                    <label class="form-control-placeholder" for="Course">Course Title</label>
+                                    <select name="crs_tchr_id" class="custom-select" id="Course">
+                                            <option selected>Choose...</option>
+                                            {%for a1 in a %}
+                                              <option value="{{a1.cid}}">{{a1.cname}}</option>
+                                            {%endfor%}
+                                      </select>                            
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-placeholder" for="date">Sheet Date</label>
+                                  <input name="date" type="date" id="date" class="form-control" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="form-control-placeholder" for="stime">Start Time</label>
+                                    <input name="startTime" type="time" id="stime" class="form-control" required>
+                                    
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-control-placeholder" for="ltime">Late Time</label>
+                                    <input name="lateTime" type="time" id="ltime" class="form-control" required>
+                                
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="form-control-placeholder" for="etime">End Time</label>
+                                        <input name="endTime" type="time" id="etime" class="form-control" required>
+                              
+                               </div>
+                               <div class="form-group">
+                                  <button type="submit" class="mybutton ">
+                                          <strong> Add sheet</strong>
+                                  </button>
+                                 </div>
+
+
+                            </form>
+
+
+                          </div>
+                        </div>
+                      </div>
+      </div>
+      
+    </div>
+    <nav class="navbar fixed-bottom navbar-light bg-light mybottom">
+      <p class="myfont1" style="font-size:3vh;color:#f9fbfc;text-align: center">
+        <strong>
+          Developed by
+        </strong>
+      </p>
+    </nav>
+  </body>
+
+  <!-- Footer -->
+
+  <!-- Footer -->
+</html>

@@ -1,0 +1,48 @@
+.mybody {
+  margin-top: 2vh;
+}
+.mypic {
+  width: 63vw;
+  height: 100vh;
+}
+.logo {
+  width: 130px;
+  height: 120px;
+  display: block;
+  margin: 0 auto;
+  border-top-left-radius: 50% 50%;
+  border-top-right-radius: 50% 50%;
+  border-bottom-right-radius: 50% 50%;
+  border-bottom-left-radius: 50% 50%;
+  padding: 1px;
+  border: 3px solid #00aa50;
+}
+.att {
+  width: 100%;
+  height: 25px;
+  display: block;
+  margin: 0 auto;
+}
+.mybutton {
+  outline: none;
+  height: 40px;
+  text-align: center;
+  width: 130px;
+  border-radius: 10px;
+  background: #fff;
+  border: 2px solid #00aa50;
+  color: #145082;
+  letter-spacing: 1px;
+  text-shadow: 0;
+  display: block;
+  margin: 0 auto;
+  font: {
+    size: 30px;
+    weight: 900;
+  }
+}
+.mytxt {
+  margin-top: 5px;
+  text-align: center;
+  color: #145082;
+}

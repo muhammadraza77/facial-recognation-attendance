@@ -1,0 +1,91 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="{% static 'signup.css' %}" type="text/css" rel="stylesheet" />
+    <title>
+      Register| Facial Attendee
+    </title>
+    <link rel="icon" type="image/png" href="{% static 'Logo.png' %}" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-">
+          <img
+            class="mypic"
+            src="{% static 'sideImage.png' %}"
+            alt="Smiley face"
+          />
+        </div>
+        <div class="col-sm">
+          <form class="mybody">
+            <div class="form-group">
+              <img
+                class="logo"
+                src="{% static 'Logo.png' %}"
+                alt="Smiley face"
+              />
+              <br />
+              <img
+                class="att"
+                src="{% static 'Capture.PNG' %}"
+                alt="Smiley face"
+              />
+              <br />
+              <label for="exampleInputEmail1">Institute Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="exampleInputEmail1"
+                placeholder="Institute Name"
+              />
+              <label for="exampleInputEmail1">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+              />
+              <label for="exampleInputEmail1">Contact Number</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                placeholder="Contact Number"
+              />
+              <label for="exampleInputEmail1">Country Name</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                placeholder="Country Name"
+              />
+              <label for="exampleInputEmail1">Institute Address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                placeholder="Institute Name"
+              />
+            </div>
+            <button type="submit" class="mybutton">
+              <strong> SIGN UP</strong>
+            </button>
+            <div class="mytxt">
+              Already have an account?
+              <a href="#" style="color: #1A4E9C"><strong> Sign in!</strong></a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

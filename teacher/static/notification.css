@@ -1,0 +1,122 @@
+@font-face{
+    font-family: gothamrounded-bold;
+    src: url('webapp\static\gothamrounded-bold.otf'),
+  }
+  .box{
+    margin-left: 4vh;
+      margin-top: 1vh;
+      height: 30vh;
+      width: 30vh;
+    border-top-left-radius: 12% 12%;
+    border-top-right-radius: 12% 12%;
+    border-bottom-right-radius: 12% 12%;
+    border-bottom-left-radius: 12% 12%;
+    padding: 1px;
+    border: 3px solid #145082;
+  }
+  .myfont{
+  font-family:gothamrounded-bold !important; 
+  }
+  .myfont1{
+    font-family:gothamrounded-bold !important; 
+    margin-left: 4vh;
+    }
+  .outer{
+    padding-top: 4%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .smallbox{
+    display: inline-block;
+    text-align: center;
+    margin-top: 1vh;
+    margin-left: 4vh;
+      height: 18vh;
+      width: 25vh;
+    border-top-left-radius: 12% 12%;
+    border-top-right-radius: 12% 12%;
+    border-bottom-right-radius: 12% 12%;
+    border-bottom-left-radius: 12% 12%;
+    padding: 2px;
+    border: 3px solid #145082;
+  }
+  
+  .mynav{
+    border-bottom: 4.3px solid #00AA50;
+    margin-bottom: 2vh;
+      background-color: rgb(255,255,255)!important);
+  }
+  
+  .mybottom{
+      border-top: 4.9px solid #00AA50;
+    background-color: #145082 !important;
+    display:inline-block;
+    text-align: center;
+  }
+  .att{
+        width: 250px;height:50px;
+        margin-top: 1.5vh
+        margin-bottom: 1vh;}
+  .mybutton {
+    float:right;
+    outline:none;
+    height: 40px;
+    text-align: center;
+    width: 130px;
+    border-radius:10px;
+    background: #fff;
+    border: 2px solid #1ABE49;
+    color:#1A4E9C;
+    letter-spacing:1px;
+    text-shadow:0;
+    display: block;
+      margin: 0 auto; 
+    font:{
+      size:30px;
+      weight:900;
+    };}
+    .mybutton1{
+      outline:none;
+      height: 40px;
+      text-align: center;
+      width: 130px;
+      border-radius:10px;
+      background: #9b9b9b;
+      border: 2px solid #fff;
+      color:#1ABE49;
+      letter-spacing:1px;
+      text-shadow:0;
+      display: block;
+        margin: 0 auto; 
+      font:{
+        size:35px;
+        weight:900;
+      };}
+      .mybutton2{
+        margin-top: 2vh;
+        margin-left: 3vh;
+        outline:none;
+        height: 40px;
+        text-align: center;
+        width: 130px;
+        border-radius:10px;
+        background: none;
+        border: 2px solid #fff;
+        color:#ffff;
+        letter-spacing:1px;
+        text-shadow:0;
+        display: block;
+        font:{
+          size:30px;
+          weight:900;
+        };}
+      .mymenu{
+      width: 17vw;
+      height:70vh;
+      background-image: url("menuBackground2.png");
+      margin-left: 0%;
+    }
+    .myrow{
+        margin-left:-5vh;
+    }

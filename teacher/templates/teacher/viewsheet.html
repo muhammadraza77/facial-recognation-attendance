@@ -1,0 +1,125 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>View Sheet | Facial Attendee</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+      <link
+         rel="stylesheet"
+         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+         crossorigin="anonymous"
+         />
+      <link rel="icon" type="image/png" href="{% static 'Logo.png' %}" />
+      <link
+         href="{% static 'viewsheet.css' %}"
+         type="text/css"
+         rel="stylesheet"
+         />
+   </head>
+   <body>
+      <nav class="navbar sticky-top navbar-light bg-light mynav">
+         <img class="att" src="{% static 'Capture.PNG' %}" alt="Smiley face" />
+         <button type="submit" class="mybutton ">
+         <strong>{{a}}</strong>
+         </button>
+      </nav>
+      <div class="container">
+      <div class="row myrow">
+         <div class="col- mymenu">
+            <p
+               class="myfontx"
+               style="font-size:5vh;color:#fFFFFf;text-align: left"
+               >
+               <strong>
+               MAIN
+               </strong>
+            </p>
+            <button class="mybutton2" onclick="location.href='{{dashboard}}'" type="button"><strong> Dashboard </strong></button>
+            <p
+               class="myfontx"
+               style="font-size:3vh;color:#fFFFFf;text-align:left"
+               >
+               <strong>
+               ATTENDANCE
+               </strong>
+            </p>
+            <button class="mybutton2" onclick="location.href='{{adder}}'" type="button"><strong> Add Sheet </strong></button>
+            <br>
+            <button type="submit" class="mybutton1 ">
+            <strong> View Sheet </strong>
+            </button>
+            <button type="submit" class="mybutton2 ">
+            <strong> Pending </strong>
+            </button>
+         </div>
+         <div class="col-md">
+            <div class="col">
+               <form action="/teacher/temp" method="GET">
+                     <label class="form-control-placeholder" for="Course">Course Title------------------Date</label>
+                     <div class="form-inline">
+                            <select name="crs_tchr_id" class="custom-select" id="Course">
+                               <option selected>Choose From</option>
+                                  
+                                  {% for c1 in c %}
+                                        <option value="{{c1.cid}}">{{c1.cname}}</option>
+                                  {%endfor%}
+                              </select>                            
+          
+                              <div class="form-group aa">
+                                  <label class="form-control-placeholder" for="date"> </label>
+                                <input name="date" type="date" id="date" class="form-control" required>
+                              </div> 
+                              
+                              <button type="submit" class="mybutton1 ">
+                                  <strong> View Sheet </strong>
+                               </button                   
+          
+               </form>
+ 
+
+              </div>
+          </div>
+ 
+            <table class="table table-bordered">
+               <thead>
+                  <tr>
+                     <th scope="col">SID</th>
+                     <th scope="col">STUDENT NAME</th>
+                     <th scope="col"></th>
+                     <th scope="col"></th>
+                     <th scope="col"></th>
+                  </tr>
+               </thead>
+               <tbody>
+                  {%for b2 in b%}
+                  <tr>
+                     <th scope="row">{{b2.id}}</th>
+                     <td>{{b2.name}}</td>
+                     <td><button class="{{b2.cls}}">{{b2.status}}
+                        </button>
+                     </td>
+                     <!-- <td><button class ="rbtn">A
+                        </button></td>
+                        <td><button class="bbtn">L
+                        </button></td>
+                        </tr> -->
+                     {%endfor%}
+               </tbody>
+            </table>
+         </div>
+      </div>
+      <nav class="navbar fixed-bottom navbar-light bg-light mybottom">
+         <p class="myfont1" style="font-size:3vh;color:#f9fbfc;text-align: center">
+            <strong>
+            Developed by
+            </strong>
+         </p>
+      </nav>
+   </body>
+   <!-- Footer -->
+   <footer class="page-footer font-small blue">
+      <script src="{% static 'dashboard.js' %}"></script>
+   </footer>
+   <!-- Footer -->
+</html>
