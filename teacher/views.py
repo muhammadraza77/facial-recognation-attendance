@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
 from django.template import loader
 from webapp.models import *
 from fascript import *
@@ -183,6 +184,7 @@ def fascript(request):
     print(Crs_id) # Crs_id = 8
     EnrollCourse_id=EnrolledCourse.objects.filter(crs_Id = Crs_id[0][0]).values_list('std_Id')
     print(EnrollCourse_id)
+    
     ll=list(EnrollCourse_id)
     # print(stu)
     
@@ -228,11 +230,43 @@ def temp(request):
     response = redirect('/teacher/viewsheet/?tname='+pp2+'&tsheet='+str(pp))
     return response
 
-def notification(request):
 
-    template=loader.get_template('teacher/notification.html')
+def notification(request):
+    StudentInformation = []
+    user_id=9
+    StuObj=Student.objects.filter(id = user_id).values_list('fName' , 'emailAddress' , 'initial')
+    print("Student Name : " , StuObj[0][0])
+    StudentInformation.append(StuObj[0][0])
+    print("Email : " , StuObj[0][1])
+    StudentInformation.append(StuObj[0][1])
+    print("Student Initial" , StuObj[0][2])
+    StudentInformation.append(StuObj[0][2])
     
+    Inst_id=Student.objects.filter(id = user_id).values_list('institute')
+    #print(Inst_id)
+    StuInst=Institute.objects.filter(id = Inst_id[0][0]).values_list('name')
+    print("Institute : " , StuInst[0][0])
+    StudentInformation.append(StuInst[0][0])
+    CoursesEnroll = EnrolledCourse.objects.filter(std_Id = user_id).values_list('crs_Id')
+    #print(CoursesEnroll)
+    print(StudentInformation)
+    print("Enrolled Courses")
+    for i in CoursesEnroll:
+        CourseName = Course.objects.filter(course_id = i[0]).values_list('course_name')
+        print(CourseName[0][0])
+    # print("name")
+
+    mylist={
+        'fname':StuObj[0][0],
+        'name':StuObj[0][0],
+        'email':StuObj[0][1],
+        'date':'12.April.2003',
+        'gender':'Male',
+        'inname':StuInst[0][0],
+    }
+    template=loader.get_template('teacher/notification.html')
+    import json
     context={
     }
+    return JsonResponse(json.dumps(mylist, sort_keys=True),safe=False)
     
-    return HttpResponse(template.render(context,request))

@@ -48,11 +48,13 @@ class TeacherList(viewsets.ModelViewSet):
         userpassword = request.POST.get('password')
 
         user = Teacher.objects.filter(email=useremail, password=userpassword)
-        n=user[0].name
+        
         if user.count() == 0:
-            return Response('user not found')
+            response = redirect('/teacher/login')
+            return response
         else:
             print("pakistan")
+            n=user[0].name
             response = redirect('/teacher/?tname='+n)
             return response
 
